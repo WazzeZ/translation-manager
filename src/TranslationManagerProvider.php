@@ -65,8 +65,9 @@ class TranslationManagerProvider extends PluginServiceProvider
         $currentLanguage = collect($locales)->firstWhere('code', $currentLocale);
 
         $otherLanguages = $locales;
+        $darkMode = config('filament.dark_mode', false);
 
-        return view('translation-manager::language-switcher', compact('otherLanguages', 'currentLanguage'));
+        return view('translation-manager::language-switcher', compact('otherLanguages', 'currentLanguage', 'darkMode'));
     }
 
     /**
